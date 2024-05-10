@@ -142,5 +142,66 @@ Creating a stacked bar chart showing the grape and kiwi yields from year to year
 ### Data Visualization From Seaborn Library
 The Seaborn library is a Python package that focuses on statistical data visualization. It serves as a high-level interface built on top of Matplotlib, providing a simpler and more efficient interface for creating appealing and informative statistical graphics
 
-<div align="center"><img src="" /></div>
+#### Creating Bar Chart
+##### Import dataset 'glue' from Seaborn
 
+                                             df = sns.load_dataset("glue")
+                                             df.head()
+<div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/dcada93d-86de-4082-b854-855ee5af0d1e" /></div>
+
+##### Creating a bar plot
+Creating a bar plot to represent the 'Model' column against the 'Score' column in the 'glue' dataset
+
+                                             sns.barplot(x='Model', 
+                                                         y='Score',
+                                                         data=df)
+                                             
+                                             plt.xticks(rotation=45)
+<div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/2564b364-1290-4b17-9ba9-a6955753a041" /></div>
+
+Creating a bar plot by dividing it based on the values in the 'Year' column, thus displaying different colors for each year
+
+##### Creating a bar chart vertical (pivot)
+                                             sns.barplot(x='Model', 
+                                                         y='Score',
+                                                         hue='Year',
+                                                         data=df)
+                                             
+                                             plt.xticks(rotation=45)
+<div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/98da8a6b-bd24-45b1-a48e-d6c971b006bf" /></div>
+
+##### Creating a bar chart horizontal (pivot)
+                                             sns.barplot(x='Score', 
+                                                         y='Model',
+                                                         hue='Year',
+                                                         data=df)
+<div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/b2979478-91e8-447b-906e-4cbb1ac16818" /></div>
+
+#### Creating Histogram
+##### Import dataset 'flights' from Seaborn
+                                             flights_df = sns.load_dataset("flights")
+                                             flights_df.head()
+<div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/33b61b14-c798-4677-b133-1adabf41d314" /></div>     
+
+##### Creating histogram distribution With "Bins=7"
+Create a histogram displaying the distribution of the number of passengers on flights, where the histogram result uses the number of passengers as input data and the argument bins=7 is used to determine the number of bins or data groups used in the histogram
+
+                                             #We can control the number of size bins too 
+                                             #specifying the number of bins
+                                             
+                                             plt.title("Distribution of Passengers")
+                                             plt.hist(flights_df.passengers, bins=7);
+<div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/43d2a5ac-e425-4b11-a6e8-02f71aa7cc0b" /></div>    
+
+##### Creating histogram distribution With "Bins=100, 500, 10"
+Displaying a histogram of the distribution of the number of passengers on flights using the argument bins=np.arange(100,599,10), which is used to explicitly determine the bin boundaries, starting from 100 up to 500 with an interval of 10.
+
+                                             import numpy as np
+                                             
+                                             #specifying the number of bins
+                                             plt.hist(flights_df.passengers, bins=np.arange(100,500,10));
+                                             
+                                             plt.title("Histogram of Passenger Counts")
+                                             plt.xlabel("Number of Passengers")
+                                             plt.ylabel("Frequency")
+<div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/d7f7c6c9-e399-4b62-b14f-5c2a167068c3" /></div>                                              
