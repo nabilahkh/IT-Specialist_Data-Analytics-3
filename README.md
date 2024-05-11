@@ -205,3 +205,17 @@ Displaying a histogram of the distribution of the number of passengers on flight
                                              plt.xlabel("Number of Passengers")
                                              plt.ylabel("Frequency")
 <div align="center"><img src="https://github.com/nabilahkh/IT-Specialist_Data-Analytics-3/assets/92252191/d7f7c6c9-e399-4b62-b14f-5c2a167068c3" /></div>                                              
+### Crisp DM
+The Cross-Industry Standard Process for Data Mining, or CRISP-DM, is one of the data mining process models.
+
+**1. Business Understanding** – What does the business need?
+
+**2. Data Understanding** – What data do we have/need? Is it clean?
+
+**3. Data preparation** – How do we organize the data for modeling?
+
+**4. Modeling** – What modeling techniques should we apply?
+
+**5. Evaluation** – Which model best meets the business objectives?
+
+**6. Deployment** – How do stakeholders access the results?
